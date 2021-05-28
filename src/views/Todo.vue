@@ -39,9 +39,9 @@ export default {
     return {
       query: "",
       tasks: [
-        { id: 1, content: "React story Thu Tra", done: false },
-        { id: 2, content: "Nhan tin cho Thu Tra", done: false },
-        { id: 3, content: "Di choi voi thu tra", done: false },
+        { id: 1, content: "React story", done: false },
+        { id: 2, content: "Nhan tin ", done: false },
+        { id: 3, content: "Di choi", done: false },
       ],
     };
   },
