@@ -17,7 +17,9 @@
           </div>
           <div class="date">Monday, 20 January 2020</div>
         </div>
-
+        <div>
+          <h1>Test git</h1>
+        </div>
         <div class="weather-box">
           <div class="temp">{{ Math.round(weather.main.temp) }}.C</div>
           <div class="weather">{{ weather.weather[0].main }}</div>
