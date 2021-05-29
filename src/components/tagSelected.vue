@@ -9,9 +9,6 @@
       >
         <span>{{ language.name }}</span>
       </div>
-      <div>
-        <h2>Test</h2>
-      </div>
     </div>
   </div>
 </template>
