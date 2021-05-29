@@ -1,6 +1,6 @@
 <template>
   <div class="hello-world">
-    abcde
+    abc
   </div>
 </template>
 
