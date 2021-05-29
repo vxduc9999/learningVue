@@ -19,7 +19,6 @@
 <script>
 export default {
   name: "tag",
-  props: {},
   data() {
     return {
       languages: [

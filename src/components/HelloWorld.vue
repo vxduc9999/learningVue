@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-    
+  <div class="hello-world">
+    abcde
   </div>
 </template>
 
