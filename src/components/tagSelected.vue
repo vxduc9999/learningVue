@@ -24,7 +24,7 @@ export default {
         { name: "C++", selected: false },
         { name: "Javascript", selected: false },
         { name: "CSS", selected: false },
-        { name: "NodeJs", selected: false },
+        { name: "Golang", selected: false },
       ],
     };
   },
