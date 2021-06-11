@@ -1,6 +1,7 @@
 <template>
-  <div id="app">To-do app</div>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
-<style>
-</style>
+<style></style>
