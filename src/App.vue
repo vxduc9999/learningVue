@@ -1,6 +1,6 @@
 <template>
-  <div id="app">To-do app</div>
+  <div id="app">
+    To-do app
+    <router-view />
+  </div>
 </template>
-
-<style>
-</style>
