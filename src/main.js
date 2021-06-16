@@ -1,8 +1,12 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import VueStash from "vue-stash";
+import store from "./store";
 
-Vue.config.productionTip = false
+Vue.use(VueStash);
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App)
-}).$mount('#app')
+  data: { store },
+  render: (h) => h(App),
+}).$mount("#app");
