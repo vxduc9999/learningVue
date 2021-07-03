@@ -1,46 +1,39 @@
 <template>
-  <div class="personal-lists">
-    <h1>My Lists</h1>
-    <div class="personal-lists-detail">
-      <div class="personal-lists-detail-left">
-        <span>icon</span>
-        <p>NameList</p>
-      </div>
-      <div class="personal-lists-detail-right">
-        <p>0</p>
-        <p>kebab_menu</p>
-      </div>
-    </div>
-    <div class="personal-lists-detail">
-      <div class="personal-lists-detail-left">
-        <span>icon</span>
-        <p>NameList2</p>
-      </div>
-      <div class="personal-lists-detail-right">
-        <p>0</p>
-        <p>kebab_menu</p>
-      </div>
+  <div class="personal-list-container">
+    <h2>My Lists</h2>
+    <div class="personal-lists">
+      <PersonalList v-for="list in $lists" :key="list.id" :list="list" />
     </div>
   </div>
 </template>
 
+<script>
+import PersonalList from "./PersonalList.vue";
+export default {
+  name: "PersonalLists",
+  components: {
+    PersonalList,
+  },
+  computed: {
+    $lists() {
+      return this.$store.listsData;
+    },
+  },
+};
+</script>
+
 <style scoped>
+.personal-list-container {
+  height: 70%;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 5px 5px 10px 10px;
+}
+
 .personal-lists {
-  height: 65%;
-}
-.personal-lists-detail {
-  display: flex;
-  justify-content: space-between;
-}
-
-.personal-lists-detail-left {
-  display: flex;
-  width: 50%;
-}
-
-.personal-lists-detail-right {
-  display: flex;
-  width: 50%;
-  justify-content: flex-end;
+  height: 90%;
+  overflow: auto;
 }
 </style>
