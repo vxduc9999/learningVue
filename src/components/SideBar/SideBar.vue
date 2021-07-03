@@ -25,8 +25,9 @@ export default {
 
 <style scoped>
 .side-bar {
-  background-color: rgb(192, 187, 187);
+  background-color: rgba(230, 245, 247, 0.5);
   width: 30%;
-  padding: 10px 0 0 10px;
+  min-width: 10%;
+  padding: 20px 10px 0 10px;
 }
 </style>

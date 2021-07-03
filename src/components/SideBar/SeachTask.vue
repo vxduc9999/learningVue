@@ -6,6 +6,6 @@
 
 <style scoped>
 .search {
-  height: 10%;
+  height: 5%;
 }
 </style>
