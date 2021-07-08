@@ -1,8 +1,8 @@
 <template>
-  <div class="list-details">
+  <div class="list-details" v-if="listName && allTasks">
     <AddTaskButton />
-    <ListSummary />
-    <ListTasks />
+    <ListSummary :listName="listName" :countAllTasks="allTasks.length" />
+    <ListTasks :allTasks="allTasks" />
   </div>
 </template>
 
@@ -16,6 +16,14 @@ export default {
     AddTaskButton,
     ListSummary,
     ListTasks,
+  },
+  props: {
+    listName: {
+      type: String,
+    },
+    allTasks: {
+      type: Array,
+    },
   },
 };
 </script>
