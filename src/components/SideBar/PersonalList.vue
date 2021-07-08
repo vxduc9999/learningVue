@@ -17,9 +17,17 @@
         @keyup.enter="$event.target.blur()"
         @blur="editListName(list.id, $event)"
       />
-      <p class="list-name" v-else @click="$store.selectedListId = list.id">
-        {{ list.name }}
-      </p>
+      <router-link
+        :to="{
+          name: 'ListDetails',
+          params: { listId: list.id },
+        }"
+        v-else
+        class="list-name"
+        @click.native="$store.selectedListId = list.id"
+      >
+        <p>{{ list.name }}</p>
+      </router-link>
     </div>
     <div class="personal-list-detail-right">
       <p>{{ $store.countAllTasksByListId(list.id) }}</p>
@@ -111,6 +119,8 @@ input {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-decoration: none;
+  color: black;
 }
 
 *::-webkit-scrollbar {

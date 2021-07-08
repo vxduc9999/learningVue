@@ -1,19 +1,16 @@
 <template>
   <div class="home">
     <SideBar />
-    <ListDetails />
+    <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
 
 <script>
 import SideBar from "./SideBar/SideBar.vue";
-import ListDetails from "./ListDetails/ListDetails.vue";
-
 export default {
   name: "Home",
   components: {
     SideBar,
-    ListDetails,
   },
 };
 </script>
