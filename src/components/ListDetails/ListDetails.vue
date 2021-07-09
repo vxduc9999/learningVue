@@ -30,6 +30,8 @@ export default {
 
 <style scoped>
 .list-details {
-  width: 70%;
+  width: 66%;
+  padding: 10px;
+  margin-left: 12px;
 }
 </style>
