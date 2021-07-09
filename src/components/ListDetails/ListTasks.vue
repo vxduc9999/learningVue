@@ -1,32 +1,42 @@
 <template>
   <div class="list-tasks">
-    <div class="list-tasks-detail">
-      <input type="checkbox" />
-      <p>TaskName</p>
-    </div>
-    <div class="function-task">
-      <select>
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
-      </select>
-      <span>icon_delete</span>
-    </div>
+    <ListTask v-for="task in allTasks" :key="task.id" :task="task" />
   </div>
 </template>
 
+<script>
+import ListTask from "./ListTask.vue";
+export default {
+  name: "ListTasks",
+  components: {
+    ListTask,
+  },
+  props: {
+    allTasks: {
+      type: Array,
+    },
+  },
+};
+</script>
+
 <style scoped>
 .list-tasks {
-  display: flex;
-  justify-content: space-between;
+  height: 88%;
+  margin-top: 20px;
+  overflow: auto;
 }
 
-.list-tasks-detail {
-  display: flex;
-  width: 100%;
+*::-webkit-scrollbar {
+  width: 8px;
 }
 
-.function-task {
-  width: 20%;
+*::-webkit-scrollbar-track {
+  background: rgb(214, 210, 210, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(150, 150, 150);
+  border-radius: 10px;
+  border: 1px solid rgb(214, 210, 210, 0);
 }
 </style>
