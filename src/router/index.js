@@ -22,13 +22,18 @@ const routes = [
             (task) => task.id_list === route.params.listId
           );
 
-          const listName = store.listsData.find(
+          const listExists = store.listsData.find(
             (list) => list.id === route.params.listId
-          )?.name;
+          );
+
+          const listName = listExists?.name;
+
+          const selected = listExists?.id;
 
           return {
             listName,
             allTasks,
+            selected,
           };
         },
         beforeEnter: (to, from, next) => {

@@ -24,6 +24,12 @@ export default {
     allTasks: {
       type: Array,
     },
+    selected: {
+      type: String,
+    },
+  },
+  mounted() {
+    this.$store.selected = this.selected;
   },
 };
 </script>
