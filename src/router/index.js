@@ -22,13 +22,18 @@ const routes = [
             (task) => task.id_list === route.params.listId
           );
 
-          const listName = store.listsData.find(
+          const listExists = store.listsData.find(
             (list) => list.id === route.params.listId
-          )?.name;
+          );
+
+          const listName = listExists?.name;
+
+          const selected = listExists?.id;
 
           return {
             listName,
             allTasks,
+            selected,
           };
         },
         beforeEnter: (to, from, next) => {
@@ -38,6 +43,32 @@ const routes = [
           const exists = listsData.find((list) => list.id === to.params.listId);
 
           return exists ? next() : next({ name: "PageNotFound" });
+        },
+      },
+      {
+        path: "all",
+        name: "AllLists",
+        component: ListDetails,
+        props: {
+          listName: "All",
+          allTasks: store.getAllTasks(),
+          selected: "All",
+        },
+      },
+      {
+        path: "completed",
+        name: "Completed",
+        component: ListDetails,
+        props: () => {
+          const allTasksCompleted = store.tasksData.filter(
+            (task) => task.done === true
+          );
+
+          return {
+            listName: "Completed",
+            allTasks: allTasksCompleted,
+            selected: "Completed",
+          };
         },
       },
     ],

@@ -2,7 +2,7 @@
   <div
     :class="{
       'personal-list-detail': true,
-      'selected-list': $store.selectedListId === list.id,
+      'selected-list': $store.selected === list.id,
     }"
   >
     <div class="personal-list-detail-left">
@@ -24,7 +24,6 @@
         }"
         v-else
         class="list-name"
-        @click.native="$store.selectedListId = list.id"
       >
         <p>{{ list.name }}</p>
       </router-link>

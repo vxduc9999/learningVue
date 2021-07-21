@@ -14,11 +14,6 @@ export default {
   components: {
     PersonalList,
   },
-  mounted() {
-    if (this.$route.params.listId) {
-      this.$store.selectedListId = this.$route.params.listId;
-    }
-  },
   computed: {
     $lists() {
       return this.$store.listsData;

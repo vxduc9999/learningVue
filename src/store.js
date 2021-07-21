@@ -6,7 +6,7 @@ export default {
   editting: {
     listId: null,
   },
-  selectedListId: null,
+  selected: null,
   getAllLists() {
     this.listsData = [...lists];
     return this.listsData;
