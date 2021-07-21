@@ -45,6 +45,32 @@ const routes = [
           return exists ? next() : next({ name: "PageNotFound" });
         },
       },
+      {
+        path: "all",
+        name: "AllLists",
+        component: ListDetails,
+        props: {
+          listName: "All",
+          allTasks: store.getAllTasks(),
+          selected: "All",
+        },
+      },
+      {
+        path: "completed",
+        name: "Completed",
+        component: ListDetails,
+        props: () => {
+          const allTasksCompleted = store.tasksData.filter(
+            (task) => task.done === true
+          );
+
+          return {
+            listName: "Completed",
+            allTasks: allTasksCompleted,
+            selected: "Completed",
+          };
+        },
+      },
     ],
   },
   {

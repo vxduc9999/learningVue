@@ -1,40 +1,31 @@
 <template>
   <div class="featured-lists">
-    <div class="featured-lists-element">
-      <div class="featured-lists-detail">
-        <span>icon</span>
-        <h2>All</h2>
-      </div>
-      <p>count_all</p>
-    </div>
-    <div class="featured-lists-element">
-      <div class="featured-lists-detail">
-        <span>icon</span>
-        <h2>Completed</h2>
-      </div>
-      <p>count_completed</p>
-    </div>
-    <div class="featured-lists-element">
-      <div class="featured-lists-detail">
-        <span>icon</span>
-        <h2>Important</h2>
-      </div>
-      <p>count_important</p>
-    </div>
+    <FeaturedList
+      :featuredName="'All'"
+      :countOfFeatured="$store.listsData.length"
+      :urlName="'AllLists'"
+    />
+    <FeaturedList
+      :featuredName="'Completed'"
+      :countOfFeatured="$store.listsData.length"
+      :urlName="'Completed'"
+    />
   </div>
 </template>
 
+<script>
+import FeaturedList from "./FeaturedList.vue";
+export default {
+  name: "FeaturedLists",
+  components: {
+    FeaturedList,
+  },
+};
+</script>
+
 <style scoped>
 .featured-lists {
-  height: 20%;
-}
-
-.featured-lists-element {
-  display: flex;
-  justify-content: space-between;
-}
-
-.featured-lists-detail {
-  display: flex;
+  height: 18%;
+  padding: 10px 5px 0 0;
 }
 </style>
